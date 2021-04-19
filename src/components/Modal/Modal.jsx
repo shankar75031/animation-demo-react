@@ -1,5 +1,5 @@
 import React from "react";
-import { Transition } from "react-transition-group";
+import { Transition, CSSTransition } from "react-transition-group";
 
 import "./Modal.css";
 
@@ -15,6 +15,12 @@ const modal = (props) => {
       timeout={animationTiming}
       mountOnEnter
       unmountOnExit
+      onEnter={() => console.log("onEnter")}
+      onEntering={() => console.log("onEntering")}
+      onEntered={() => console.log("onEntered")}
+      onExit={() => console.log("onExit")}
+      onExiting={() => console.log("onExiting")}
+      onExited={() => console.log("onExited")}
     >
       {(state) => {
         const cssClasses = [
